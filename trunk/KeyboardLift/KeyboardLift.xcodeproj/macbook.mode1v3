@@ -326,78 +326,26 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FA302E160FC3E785006333DE</string>
+										<string>FA9A97520FC3E7DB002A2C06</string>
 										<key>history</key>
 										<array>
 											<string>FA302DD10FC3E350006333DE</string>
 											<string>FA302E0B0FC3E785006333DE</string>
 											<string>FA302E0C0FC3E785006333DE</string>
 											<string>FA302E0D0FC3E785006333DE</string>
-											<string>FA302E0E0FC3E785006333DE</string>
+											<string>FA302E160FC3E785006333DE</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>FA302DD60FC3E350006333DE</string>
 											<string>FA302DD70FC3E350006333DE</string>
 											<string>FA302DD80FC3E350006333DE</string>
-											<string>FA302DD90FC3E350006333DE</string>
-											<string>FA302DDA0FC3E350006333DE</string>
-											<string>FA302DDB0FC3E350006333DE</string>
-											<string>FA302DDC0FC3E350006333DE</string>
 											<string>FA302DDD0FC3E350006333DE</string>
-											<string>FA302DDE0FC3E350006333DE</string>
 											<string>FA302DDF0FC3E350006333DE</string>
-											<string>FA302DE00FC3E350006333DE</string>
-											<string>FA302DE10FC3E350006333DE</string>
-											<string>FA302DE20FC3E350006333DE</string>
-											<string>FA302DE30FC3E350006333DE</string>
-											<string>FA302DE40FC3E350006333DE</string>
-											<string>FA302DE50FC3E350006333DE</string>
-											<string>FA302DF80FC3E396006333DE</string>
-											<string>FA302DF90FC3E396006333DE</string>
-											<string>FA302DFA0FC3E396006333DE</string>
-											<string>FA302DFB0FC3E396006333DE</string>
-											<string>FA302E0F0FC3E785006333DE</string>
-											<string>FA302E100FC3E785006333DE</string>
-											<string>FA302E110FC3E785006333DE</string>
-											<string>FA302E120FC3E785006333DE</string>
-											<string>FA302E130FC3E785006333DE</string>
-											<string>FA302E140FC3E785006333DE</string>
-											<string>FA302E150FC3E785006333DE</string>
-										</array>
-									</dict>
-									<key>Split1</key>
-									<dict>
-										<key>PBXProjectModuleGUID</key>
-										<string>FA302DE70FC3E350006333DE</string>
-										<key>PBXProjectModuleLabel</key>
-										<string>KeyboardLiftViewController.h</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>FA302E170FC3E785006333DE</string>
-										<key>history</key>
-										<array>
-											<string>FA302DE80FC3E350006333DE</string>
-										</array>
-									</dict>
-									<key>Split2</key>
-									<dict>
-										<key>PBXProjectModuleGUID</key>
-										<string>FA302DEA0FC3E350006333DE</string>
-										<key>PBXProjectModuleLabel</key>
-										<string>KeyboardLiftViewController.h</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>FA302E180FC3E785006333DE</string>
-										<key>history</key>
-										<array>
-											<string>FA302DEB0FC3E350006333DE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
-									<string>3</string>
+									<string>1</string>
 								</dict>
 								<key>StatusBarVisibility</key>
 								<true/>
@@ -451,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FA302D860FC3E023006333DE</string>
+				<string>FA9A97530FC3E7DB002A2C06</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FA302D870FC3E023006333DE</string>
+				<string>FA9A97540FC3E7DB002A2C06</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -587,8 +535,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FA302DEE0FC3E350006333DE</string>
-		<string>FA302DEF0FC3E350006333DE</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FA302D880FC3E023006333DE</string>
@@ -672,7 +618,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FA302D880FC3E023006333DE</string>
-				<string>FA302D890FC3E023006333DE</string>
+				<string>FA9A97550FC3E7DB002A2C06</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -714,8 +660,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 185}}</string>
-											<string>{{316, 0}, {378, 185}}</string>
+											<string>{{0, 0}, {316, 194}}</string>
+											<string>{{316, 0}, {378, 194}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -730,8 +676,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 185}}</string>
-											<string>{{0, 185}, {694, 196}}</string>
+											<string>{{0, 0}, {694, 194}}</string>
+											<string>{{0, 194}, {694, 187}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -764,7 +710,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 185}}</string>
+									<string>{{316, 0}, {378, 194}}</string>
 									<key>RubberWindowFrame</key>
 									<string>21 333 694 422 0 0 1280 778 </string>
 								</dict>
@@ -792,13 +738,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FA302D8A0FC3E023006333DE</string>
+				<string>FA9A97560FC3E7DB002A2C06</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FA302D8B0FC3E023006333DE</string>
-				<string>FA302D8C0FC3E023006333DE</string>
-				<string>FA302D8D0FC3E023006333DE</string>
-				<string>FA302D8E0FC3E023006333DE</string>
-				<string>FA302D8F0FC3E023006333DE</string>
+				<string>FA9A97570FC3E7DB002A2C06</string>
+				<string>FA9A97580FC3E7DB002A2C06</string>
+				<string>FA9A97590FC3E7DB002A2C06</string>
+				<string>FA9A975A0FC3E7DB002A2C06</string>
+				<string>FA9A975B0FC3E7DB002A2C06</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -960,7 +906,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FA302D900FC3E023006333DE</string>
+				<string>FA9A975C0FC3E7DB002A2C06</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
