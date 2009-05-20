@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface KeyboardLiftViewController : UIViewController {
-
+@interface KeyboardLiftViewController : BaseViewController {
+	
 }
 
 @end
