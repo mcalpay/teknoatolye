@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+<f:view>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Foto</title>
+	<link href="/seams/themes/yesil.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+	<h:form>
+		<rich:dataGrid value="#{photoService.frontPagePhotos}" var="foto"
+			columns="3" elements="9">
+			<h:column>
+				<s:div>
+					<s:link id="lnk_foto" view="/resource/rest/foto/#{foto.name}" propagation="none">
+						<s:graphicImage id="imaj" value="#{foto.data}"
+							style="border: 1px solid black;" lt="image could not be found">
+							<s:transformImageSize width="100" maintainRatio="true" />
+						</s:graphicImage>
+					</s:link>
+				</s:div>
+				<s:div>
+					<h:outputLabel value="#{foto.name}" for="imaj" />
+				</s:div>
+				<s:div>
+					<h:commandLink value="Approve"
+						action="#{photoService.approvePhoto(foto)}"
+						rendered="#{foto.approved eq null}" />
+					<h:outputText value="," rendered="#{foto.approved eq null}" />
+					<h:commandLink value="Delete"
+						action="#{photoService.disapprovePhoto(foto)}"
+						rendered="#{s:hasRole('admin')}" />
+				</s:div>
+			</h:column>
+		</rich:dataGrid>
+	</h:form>
+	<s:validateAll>
+		<h:form enctype="multipart/form-data">
+			<span class="errors"><h:messages /></span>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Ad" for="txt_name" />
+				<h:inputText id="txt_name" value="#{newPhoto.name}" required="true"
+					requiredMessage="Ad zorunludur!" />
+				<h:outputLabel value="Dosya" for="flu_dosya" />
+				<s:fileUpload id="flu_dosya" data="#{newPhoto.data}" />
+			</h:panelGrid>
+			<h:commandButton action="#{photoService.createNewPhoto(newPhoto)}"
+				value="Kaydet" />
+		</h:form>
+		<h:form>
+			<h:commandButton action="#{identity.logout()}" value="Logout" />
+		</h:form>
+	</s:validateAll>
+	</body>
+</f:view>
+
+</html>
