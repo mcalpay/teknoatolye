@@ -1,7 +1,13 @@
 body {
-	font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	color: #4f6b72;
 	background: #E6EAE9;
+	text-align: center;
+}
+
+#main {
+	margin: 0 auto;
+	width: 800px;
+	text-align: left;
 }
 
 a {
@@ -16,7 +22,7 @@ a {
 
 caption {
 	padding: 0 0 5px 0;
-	width: 700px;	 
+	width: 700px;
 	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	text-align: right;
 }
@@ -48,7 +54,6 @@ td {
 	padding: 6px 6px 6px 12px;
 	color: #4f6b72;
 }
-
 
 td.alt {
 	background: #F5FAFA;
