@@ -68,18 +68,25 @@ public class PhotoService {
 		}
 	}
 
-	public void createNewPhoto(Photo p) {
+	public Photo createNewPhoto(Photo p) {
+		logger.info("creating photo : " + p.getName());
 		if (p.getData() != null) {
 			if (getPhoto(p.getName()) == null) {
 				entityManager.persist(p);
+				FacesMessages.instance().add("Kayýt yaratýldý.");
+				return p;
 			}
 			else {
+				logger.info("Ayný isimde bir kayýt var!");
 				FacesMessages.instance().add("Ayný isimde bir kayýt var!");
 			}
 		}
 		else {
+			logger.info("Dosya zorunludur!");
 			FacesMessages.instance().add("Dosya zorunludur!");
 		}
+		
+		return null;
 	}
 
 	@Restrict("#{s:hasRole('admin')}")

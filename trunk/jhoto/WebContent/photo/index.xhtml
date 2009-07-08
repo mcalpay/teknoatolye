@@ -9,8 +9,9 @@
 
 	<ui:define name="content">
 		<h:form>
+		<div id="browser">
 			<rich:dataGrid value="#{photoService.frontPagePhotos}" var="foto"
-				columns="3" elements="9">
+				columns="3" elements="9" styleClass="contentNoBorders" columnClasses="contentNoBorders">
 				<h:column>
 					<s:div>
 						<s:link id="lnk_foto" view="/resource/rest/foto/#{foto.name}"
@@ -35,21 +36,7 @@
 					</s:div>
 				</h:column>
 			</rich:dataGrid>
+		</div>
 		</h:form>
-		<s:validateAll>
-			<h:form enctype="multipart/form-data">
-				<span class="errors"><h:messages /></span>
-				<h:panelGrid columns="2">
-					<h:outputLabel value="Name" for="txt_name" />
-					<h:inputText id="txt_name" value="#{newPhoto.name}" required="true"
-						requiredMessage="Ad zorunludur!" />
-					<h:outputLabel value="File" for="flu_dosya" />
-					<s:fileUpload id="flu_dosya" data="#{newPhoto.data}" />
-				</h:panelGrid>
-				<h:commandButton action="#{photoService.createNewPhoto(newPhoto)}"
-					value="Kaydet" />
-			</h:form>
-		</s:validateAll>
 	</ui:define>
-
 </ui:composition>
