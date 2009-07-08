@@ -11,7 +11,7 @@ import org.jboss.seam.annotations.Scope;
 
 @Entity
 @Name("newPhoto")
-@Scope(ScopeType.SESSION)
+@Scope(ScopeType.CONVERSATION)
 public class Photo {
 
 	@Id

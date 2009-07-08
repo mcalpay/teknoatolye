@@ -4,22 +4,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <f:view>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Photolog</title>
-	<link href="/jhoto/themes/yesil.css" rel="stylesheet" type="text/css" />
+	<link href="/jhoto/themes/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-	<div id="main"><ui:insert name="content" /></div>
-	<div><span class="errors"><h:message for="password" /></span> <span
-		class="errors"><h:messages globalOnly="true" /></span></div>
-	<h:form>
-		<h:commandButton action="#{identity.logout()}" value="Logout" />
-	</h:form>
+	<div id="container">
+	<div id="navbar"><c:choose>
+		<c:when test="#{identity.loggedIn}">
+			<ui:include src="/sideMenu.xhtml" />
+		</c:when>
+		<c:otherwise>
+			<ui:include src="/loginForm.xhtml" />
+		</c:otherwise>
+	</c:choose></div>
+	<div id="content"><span class="errors"><h:messages /></span><ui:insert
+		name="content" /></div>
+	</div>
 	</body>
 </f:view>
-
 </html>

@@ -1,0 +1,57 @@
+body {
+	margin: 5em;
+	padding: 1em;
+	text-align: center;
+	color: #442255;
+	background-color: #ddccff;
+	background-image: url('images/happysun.png');
+}
+
+.tooldef {
+	margin: 5px 0 5px 10px;
+}
+
+#browser,#imagedetail,#imagecomments,#imageframe {
+	padding: 1em 1em 1em 1em;
+}
+
+#navbar {
+	float: right;
+	width: 20em;
+}
+
+#content {
+	margin: 0 21em 0 0;
+}
+
+#content,#navbar {
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #ccaadd;
+	border-width: 5px;
+	background-color: #ccccff;
+}
+
+.contentNoBorders {
+	border-width: 0px 0px 0px 0px;
+	background-color: #ccccff;
+}
+.titletext {
+	font-weight: bold;
+}
+
+.text {
+	text-align: left;
+}
+
+#avatar {
+	float: left; #
+	width: 77px; #
+	height: 77px;
+}
+
+.comment {
+	margin: 0 0px 0 80px;
+	height: 200px; #
+	clear: right;
+}

@@ -3,20 +3,16 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
 	xmlns:f="http://java.sun.com/jsf/core" template="template.xhtml">
 
 	<ui:define name="content">
-		<h:form>
-			<h:panelGrid columns="2">
-				<h:outputLabel for="txt_username">User Name:</h:outputLabel>
-				<h:inputText id="txt_username" value="#{credentials.username}"
-					size="15" maxlength="15" />
-				<h:outputLabel for="password">Password:</h:outputLabel>
-				<h:inputSecret id="password" value="#{credentials.password}"
-					size="15" maxlength="15" />
-			</h:panelGrid>
-			<h:commandButton value="Login" action="#{identity.login}" />
-		</h:form>
+		Login to use the site...
+	</ui:define>
+
+	<ui:define name="navbarcontent">
+
 	</ui:define>
 
 </ui:composition>
