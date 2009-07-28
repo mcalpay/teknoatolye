@@ -1,0 +1,42 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:f="http://java.sun.com/jsf/core" template="/template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+		<div id="browser">
+			<rich:dataGrid value="#{photoService.frontPagePhotos}" var="foto"
+				columns="3" elements="9" styleClass="contentNoBorders" columnClasses="contentNoBorders">
+				<h:column>
+					<s:div>
+						<s:link id="lnk_foto" view="/resource/rest/foto/#{foto.name}"
+							propagation="none">
+							<s:graphicImage id="imaj" value="#{foto.data}"
+								style="border: 1px solid black;" lt="image could not be found">
+								<s:transformImageSize width="100" maintainRatio="true" />
+							</s:graphicImage>
+						</s:link>
+					</s:div>
+					<s:div>
+						<h:outputLabel value="#{foto.name}" for="imaj" />
+					</s:div>
+					<s:div>
+						<h:commandLink value="Approve"
+							action="#{photoService.approvePhoto(foto)}"
+							rendered="#{foto.approved eq null}" />
+						<h:outputText value="," rendered="#{foto.approved eq null}" />
+						<h:commandLink value="Delete"
+							action="#{photoService.disapprovePhoto(foto)}"
+							rendered="#{s:hasRole('admin')}" />
+					</s:div>
+				</h:column>
+			</rich:dataGrid>
+		</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
