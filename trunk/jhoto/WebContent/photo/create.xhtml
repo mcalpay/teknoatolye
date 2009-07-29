@@ -5,21 +5,25 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:s="http://jboss.com/products/seam/taglib"
 	xmlns:rich="http://richfaces.org/rich"
-	xmlns:f="http://java.sun.com/jsf/core" template="/template.xhtml">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:atolye="http://www.innova.com.tr/atolye"
+	template="/template.xhtml">
 
 	<ui:define name="content">
 		<s:validateAll>
-			<h:form enctype="multipart/form-data">
-				<h:panelGrid columns="2">
-					<h:outputLabel value="Name" for="txt_name" />
-					<h:inputText id="txt_name" value="#{newPhoto.name}" required="true"
-						requiredMessage="Ad zorunludur!" />
-					<h:outputLabel value="File" for="flu_dosya" />
-					<s:fileUpload id="flu_dosya" data="#{newPhoto.data}" />
-				</h:panelGrid>
-				<h:commandButton action="#{photoService.createNewPhoto(newPhoto)}"
-					value="Create" />
-			</h:form>
+			<atolye:bulut>
+				<h:form enctype="multipart/form-data">
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Name" for="txt_name" />
+						<h:inputText id="txt_name" value="#{newPhoto.name}"
+							required="true" requiredMessage="Ad zorunludur!" />
+						<h:outputLabel value="File" for="flu_dosya" />
+						<s:fileUpload id="flu_dosya" data="#{newPhoto.data}" />
+					</h:panelGrid>
+					<h:commandButton action="#{photoService.createNewPhoto(newPhoto)}"
+						value="Create" />
+				</h:form>
+			</atolye:bulut>
 		</s:validateAll>
 	</ui:define>
 

@@ -4,13 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:atolye="http://www.innova.com.tr/atolye">
 
 <h:form>
-	<h:panelGrid columns="1">
-		<h:commandLink value="New" action="/photo/create.xhtml" />
-		<h:commandLink value="Gallery" action="/photo/index.xhtml" />
-	</h:panelGrid>
+	<atolye:bulut>
+		<h:panelGrid columns="1" width="100%">
+			<h:commandLink value="New" action="/photo/create.xhtml" />
+			<h:commandLink value="Gallery" action="/photo/index.xhtml" />
+		</h:panelGrid>
+	</atolye:bulut>
 </h:form>
 
 </html>
