@@ -2,9 +2,41 @@ body {
 	margin: 5em;
 	padding: 1em;
 	text-align: center;
-	color: #442255;
-	background-color: #ddccff;
-	background-image: url('images/happysun.png');
+}
+
+.aframe {
+}
+
+td.leftframe {
+	width  :43px;
+	height :168px;
+	background-image:url('images/lefty.png');
+	background-repeat: repeat-y;
+	border-width: 0px 0px 0px 0px;
+}
+
+td.topframe {
+	width  :198px;
+	height :45px;
+	background-image:url('images/topy.png');
+	background-repeat: repeat-x;
+	border-width: 0px 0px 0px 0px;
+}
+
+td.rightframe {
+	width  :43px;
+	height :168px;
+	background-image:url('images/righty.png');
+	background-repeat: repeat-y;
+	border-width: 0px 0px 0px 0px;
+}
+
+td.bottomframe {
+	width  :198px;
+	height :45px;
+	background-image:url('images/bottomy.png');
+	background-repeat: repeat-x;
+	border-width: 0px 0px 0px 0px;
 }
 
 .tooldef {
@@ -25,16 +57,10 @@ body {
 }
 
 #content,#navbar {
-	border-width: 1px 1px 1px 1px;
-	border-style: solid;
-	border-color: #ccaadd;
-	border-width: 5px;
-	background-color: #ccccff;
 }
 
 .contentNoBorders {
-	border-width: 0px 0px 0px 0px;
-	background-color: #ccccff;
+	border-width: 0 0 0 0;
 }
 .titletext {
 	font-weight: bold;
@@ -45,13 +71,13 @@ body {
 }
 
 #avatar {
-	float: left; #
-	width: 77px; #
+	float: left; 
+	width: 77px; 
 	height: 77px;
 }
 
 .comment {
 	margin: 0 0px 0 80px;
-	height: 200px; #
+	height: 200px;
 	clear: right;
 }

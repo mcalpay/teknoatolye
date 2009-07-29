@@ -12,6 +12,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Photolog</title>
 	<link href="/jhoto/themes/style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/jhoto/scripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var animationLoop = function(it) {
+				it.animate({ 
+					marginLeft: (Math.round(Math.random()*10) - 5)+"px",
+					marginTop: (Math.round(Math.random()*10) - 5)+"px"
+				}, 1500, "linear",
+				function() {
+					animationLoop($(this));
+				});
+			};
+			$("table.aframe").each(function() {
+				animationLoop($(this));
+			});
+		});
+		</script>
 	</head>
 	<body>
 	<div id="container">
