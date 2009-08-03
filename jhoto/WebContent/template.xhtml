@@ -17,14 +17,14 @@
 		$(document).ready(function() {
 			var animationLoop = function(it) {
 				it.animate({ 
-					marginLeft: (Math.round(Math.random()*10) - 5)+"px",
-					marginTop: (Math.round(Math.random()*10) - 5)+"px"
-				}, 1500, "linear",
+					marginLeft: (Math.round(Math.random()*30) - 15)+"px",
+					marginTop: (Math.round(Math.random()*30) - 15)+"px"
+				}, 3000, "linear",
 				function() {
 					animationLoop($(this));
 				});
 			};
-			$("table.aframe").each(function() {
+			$("div.bulut1").each(function() {
 				animationLoop($(this));
 			});
 		});

@@ -9,7 +9,7 @@
 
 <h:form>
 	<atolye:bulut>
-		<h:panelGrid columns="2" styleClass="main">
+		<h:panelGrid columns="2">
 			<h:outputLabel for="txt_username">User Name:</h:outputLabel>
 			<h:inputText id="txt_username" value="#{credentials.username}"
 				size="15" maxlength="15" />
@@ -17,7 +17,7 @@
 			<h:inputSecret id="password" value="#{credentials.password}"
 				size="15" maxlength="15" />
 		</h:panelGrid>
-		<div class="buttonpan"><h:commandButton value="Login"
+		<div><h:commandButton value="Login"
 			action="#{identity.login}" /></div>
 	</atolye:bulut>
 </h:form>
