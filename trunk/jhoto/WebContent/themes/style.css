@@ -2,9 +2,17 @@ body {
 	margin: 5em;
 	padding: 1em;
 	text-align: center;
+	background-color:#ddddff;
+	background-image:url('images/sun.gif');
+	background-repeat: no-repeat;
 }
 
-.aframe {
+div.bulut1 {
+	background-image:url('images/bulut1.gif');
+	height :170px;
+	width : 290px;
+	padding-top: 70px;
+	padding-left: 20px;
 }
 
 td.leftframe {
@@ -61,6 +69,8 @@ td.bottomframe {
 
 .contentNoBorders {
 	border-width: 0 0 0 0;
+	background:transparent;
+	background-repeat: no-repeat;
 }
 .titletext {
 	font-weight: bold;
