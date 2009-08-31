@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'pinpon' target in the 'pinpon' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
