@@ -271,13 +271,14 @@
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1058C7A2FEA54F0111CA2CBB</string>
+								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>10</integer>
+									<integer>8</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -301,7 +302,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>18 59 1280 719 0 0 1280 778 </string>
+						<string>-3 59 1280 719 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -331,14 +332,27 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FAA264F8104BB2A0007A3E23</string>
+										<string>FA94FAC3104BDE3200FD1C4C</string>
 										<key>history</key>
 										<array>
-											<string>FAA264E0104BB150007A3E23</string>
+											<string>FA94FA94104BBD5900FD1C4C</string>
+											<string>FA94FABB104BDE3200FD1C4C</string>
+											<string>FA94FABC104BDE3200FD1C4C</string>
+											<string>FA94FABD104BDE3200FD1C4C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>FAA483FE104BAC2F00449E27</string>
+											<string>FA94FA97104BBD5900FD1C4C</string>
+											<string>FA94FA98104BBD5900FD1C4C</string>
+											<string>FA94FA99104BBD5900FD1C4C</string>
+											<string>FA94FA9A104BBD5900FD1C4C</string>
+											<string>FA94FAAC104BDDCB00FD1C4C</string>
+											<string>FA94FABE104BDE3200FD1C4C</string>
+											<string>FA94FABF104BDE3200FD1C4C</string>
+											<string>FA94FAC0104BDE3200FD1C4C</string>
+											<string>FA94FAC1104BDE3200FD1C4C</string>
+											<string>FA94FAC2104BDE3200FD1C4C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,7 +366,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1072, 500}}</string>
 								<key>RubberWindowFrame</key>
-								<string>18 59 1280 719 0 0 1280 778 </string>
+								<string>-3 59 1280 719 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -372,7 +386,7 @@
 								<key>Frame</key>
 								<string>{{0, 505}, {1072, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>18 59 1280 719 0 0 1280 778 </string>
+								<string>-3 59 1280 719 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -396,9 +410,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FAA264F9104BB2A0007A3E23</string>
+				<string>FA94FA6C104BBA9C00FD1C4C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FAA264FA104BB2A0007A3E23</string>
+				<string>FA94FA6D104BBA9C00FD1C4C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -538,7 +552,7 @@
 		<string>/Users/macbook/Documents/work/pinpon/pinpon.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>18 59 1280 719 0 0 1280 778 </string>
+	<string>-3 59 1280 719 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -615,7 +629,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FAA483EC104BABF100449E27</string>
-				<string>FAA264FB104BB2A0007A3E23</string>
+				<string>FA94FA6E104BBA9C00FD1C4C</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -657,8 +671,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 198}}</string>
-											<string>{{316, 0}, {378, 198}}</string>
+											<string>{{0, 0}, {316, 202}}</string>
+											<string>{{316, 0}, {378, 202}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -673,8 +687,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 198}}</string>
-											<string>{{0, 198}, {694, 183}}</string>
+											<string>{{0, 0}, {694, 202}}</string>
+											<string>{{0, 202}, {694, 179}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -707,7 +721,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 198}}</string>
+									<string>{{316, 0}, {378, 202}}</string>
 									<key>RubberWindowFrame</key>
 									<string>21 333 694 422 0 0 1280 778 </string>
 								</dict>
@@ -735,13 +749,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FAA264FC104BB2A0007A3E23</string>
+				<string>FA94FA6F104BBA9C00FD1C4C</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FAA264FD104BB2A0007A3E23</string>
-				<string>FAA264FE104BB2A0007A3E23</string>
-				<string>FAA264FF104BB2A0007A3E23</string>
-				<string>FAA26500104BB2A0007A3E23</string>
-				<string>FAA26501104BB2A0007A3E23</string>
+				<string>FA94FA70104BBA9C00FD1C4C</string>
+				<string>FA94FA71104BBA9C00FD1C4C</string>
+				<string>FA94FA72104BBA9C00FD1C4C</string>
+				<string>FA94FA73104BBA9C00FD1C4C</string>
+				<string>FA94FA74104BBA9C00FD1C4C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -903,7 +917,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FAA26502104BB2A0007A3E23</string>
+				<string>FA94FA75104BBA9C00FD1C4C</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
