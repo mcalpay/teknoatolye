@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -314,6 +312,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -331,10 +331,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FAA264E0104BB150007A3E23</string>
+										<string>FAA264F8104BB2A0007A3E23</string>
 										<key>history</key>
 										<array>
-											<string>FAA264DF104BB150007A3E23</string>
+											<string>FAA264E0104BB150007A3E23</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -396,9 +396,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FAA264E1104BB150007A3E23</string>
+				<string>FAA264F9104BB2A0007A3E23</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FAA264E2104BB150007A3E23</string>
+				<string>FAA264FA104BB2A0007A3E23</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -533,8 +533,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>FAA483EC104BABF100449E27</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>FAA483EC104BABF100449E27</string>
 		<string>/Users/macbook/Documents/work/pinpon/pinpon.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -615,7 +615,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FAA483EC104BABF100449E27</string>
-				<string>FAA264E3104BB150007A3E23</string>
+				<string>FAA264FB104BB2A0007A3E23</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -657,8 +657,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 194}}</string>
-											<string>{{316, 0}, {378, 194}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -673,8 +673,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 194}}</string>
-											<string>{{0, 194}, {694, 187}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -707,7 +707,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 194}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>21 333 694 422 0 0 1280 778 </string>
 								</dict>
@@ -735,13 +735,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FAA264E4104BB150007A3E23</string>
+				<string>FAA264FC104BB2A0007A3E23</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FAA264E5104BB150007A3E23</string>
-				<string>FAA264E6104BB150007A3E23</string>
-				<string>FAA264E7104BB150007A3E23</string>
-				<string>FAA264E8104BB150007A3E23</string>
-				<string>FAA264E9104BB150007A3E23</string>
+				<string>FAA264FD104BB2A0007A3E23</string>
+				<string>FAA264FE104BB2A0007A3E23</string>
+				<string>FAA264FF104BB2A0007A3E23</string>
+				<string>FAA26500104BB2A0007A3E23</string>
+				<string>FAA26501104BB2A0007A3E23</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -903,7 +903,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FAA264EA104BB150007A3E23</string>
+				<string>FAA26502104BB2A0007A3E23</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
