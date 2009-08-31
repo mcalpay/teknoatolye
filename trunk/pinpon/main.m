@@ -42,8 +42,9 @@ int main(int argc, char *argv[]) {
 	// display call back for current window
 	// needs one
 	//BaseCallbacks * callBack = [[[CircleCallbacks alloc] init:200 y:150 r:10] retain];
-	BarCallbacks * sag = [[BarCallbacks alloc] initWithRect:390 y1:10 w:10 h:280];
-
+	[[BarCallbacks alloc] initWithRect:390 y1:10 w:10 h:280];
+	[[BarCallbacks alloc] initWithRect:0 y1:10 w:10 h:280];
+	[[BarCallbacks alloc] initWithRect:0 y1:0 w:400 h:10];
 	glutMainLoop();
 	
 	return 0;

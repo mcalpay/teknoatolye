@@ -14,7 +14,7 @@
 
 @synthesize box;
 
-static BarCallbacks * workingCallback;
+static NSMutableArray * callbacks;
 
 -(void) display {
 	
@@ -61,7 +61,10 @@ static BarCallbacks * workingCallback;
 }
 
 void keyHandler(unsigned char key, int x, int y) {
-	[workingCallback keyHandler:key x:x y:y];
+	for( int i = 0; i < callbacks.count; i++) {
+		BarCallbacks * cb = [callbacks objectAtIndex:i];
+		[cb keyHandler:key x:x y:y];
+	}
 }
 
 -(void) keyUp:(unsigned char) key x:(int) x y:(int) y {
@@ -69,32 +72,41 @@ void keyHandler(unsigned char key, int x, int y) {
 }
 
 void keyUp(unsigned char key, int x, int y) {
-	[workingCallback keyUp:key x:x y:y];
+	for( int i = 0; i < callbacks.count; i++) {
+		BarCallbacks * cb = [callbacks objectAtIndex:i];
+		[cb keyUp:key x:x y:y];
+	}
 }
 
 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
-	[workingCallback display];
+	for( int i = 0; i < callbacks.count; i++) {
+		BarCallbacks * cb = [callbacks objectAtIndex:i];
+		[cb display];
+	}
 	glFlush();
 }
 
 //- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
 void reshape(int x, int y) {
-	[workingCallback reshape:x y:y];
+	for( int i = 0; i < callbacks.count; i++) {
+		BarCallbacks * cb = [callbacks objectAtIndex:i];
+		[cb reshape:x y:y];
+	}
 }
 
--(id) init{
+-(id) init {
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyHandler);
 	glutKeyboardUpFunc(keyUp);
-	workingCallback = self;
+	if(callbacks == nil) {
+		callbacks = [[NSMutableArray alloc] initWithCapacity:3];
+	}
+	
+	[callbacks addObject:self];
 	return self;
-}
-
-+(BarCallbacks *) getWorkingCallback {
-	return workingCallback;
 }
 
 -(id) initWithRect:(float) _x1 y1:(float) _y1 w:(float) _w h:(float) _h {
