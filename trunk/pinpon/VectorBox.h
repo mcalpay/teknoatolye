@@ -10,11 +10,12 @@
 
 
 @interface VectorBox : NSObject {
-	float x, y, xr, yr;
+	float x, y, xr, yr, distance, angle;
 }
 
-@property float x, y, xr, yr;
+@property float x, y, xr, yr, distance, angle;
 
 -(id) initWithX:(float)_x y:(float)_y xr:(float)_xr yr:(float)_yr;
+-(id) initWithX:(float)_x y:(float)_y xr:(float)_xr yr:(float)_yr distance:(float) _d angle:(float) _a;
 
 @end
