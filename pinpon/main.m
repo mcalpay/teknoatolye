@@ -10,7 +10,8 @@
 //#include <OpenGL/glu.h>		// Header File For The GLu32 Library
 #include <GLUT/glut.h>		// Header File For The GLut Library
 // GLUT is the opengl tool kit
-
+#import "World.h"
+#import "PlatformCallbacks.h"
 #import "BarCallbacks.h"
 
 int main(int argc, char *argv[]) {	
@@ -45,6 +46,11 @@ int main(int argc, char *argv[]) {
 	[[BarCallbacks alloc] initWithRect:390 y1:10 w:10 h:280];
 	[[BarCallbacks alloc] initWithRect:0 y1:10 w:10 h:280];
 	[[BarCallbacks alloc] initWithRect:0 y1:0 w:400 h:10];
+	
+	PlatformCallbacks * p = [[PlatformCallbacks alloc] initWithRect:100 y1:290 w:100 h:10 distance:10];
+	World * world = [World world];
+	[world startTickingEveryMilis:10];
+	[world addVectorBox:p.box];
 	glutMainLoop();
 	
 	return 0;
