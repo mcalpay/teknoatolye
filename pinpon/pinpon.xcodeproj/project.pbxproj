@@ -13,6 +13,8 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		FA0017CB1054F16500C8787A /* PlatformCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0017CA1054F16500C8787A /* PlatformCallbacks.m */; };
 		FA0017DA1054F35400C8787A /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0017D91054F35400C8787A /* World.m */; };
+		FA18E6AC10590C6C00F80D1B /* BallCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18E6AB10590C6C00F80D1B /* BallCallbacks.m */; };
+		FA18E6AF10590CE500F80D1B /* BaseCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18E6AE10590CE500F80D1B /* BaseCallbacks.m */; };
 		FAA264D8104BB114007A3E23 /* BarCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA264D7104BB114007A3E23 /* BarCallbacks.m */; };
 		FAA264DC104BB13D007A3E23 /* VectorBox.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA264DB104BB13D007A3E23 /* VectorBox.m */; };
 		FAA483BC104BA70C00449E27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA483BB104BA70C00449E27 /* OpenGL.framework */; };
@@ -34,6 +36,10 @@
 		FA0017CA1054F16500C8787A /* PlatformCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformCallbacks.m; sourceTree = "<group>"; };
 		FA0017D81054F35400C8787A /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		FA0017D91054F35400C8787A /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		FA18E6AA10590C6C00F80D1B /* BallCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallCallbacks.h; sourceTree = "<group>"; };
+		FA18E6AB10590C6C00F80D1B /* BallCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallCallbacks.m; sourceTree = "<group>"; };
+		FA18E6AD10590CE500F80D1B /* BaseCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCallbacks.h; sourceTree = "<group>"; };
+		FA18E6AE10590CE500F80D1B /* BaseCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCallbacks.m; sourceTree = "<group>"; };
 		FAA264D6104BB114007A3E23 /* BarCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCallbacks.h; sourceTree = "<group>"; };
 		FAA264D7104BB114007A3E23 /* BarCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCallbacks.m; sourceTree = "<group>"; };
 		FAA264DA104BB13D007A3E23 /* VectorBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorBox.h; sourceTree = "<group>"; };
@@ -60,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA483D2104BAA3000449E27 /* world */,
-				FAA483C7104BA7EC00449E27 /* box */,
+				FAA483C7104BA7EC00449E27 /* callbacks */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -133,15 +139,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FAA483C7104BA7EC00449E27 /* box */ = {
+		FAA483C7104BA7EC00449E27 /* callbacks */ = {
 			isa = PBXGroup;
 			children = (
 				FAA264D6104BB114007A3E23 /* BarCallbacks.h */,
 				FAA264D7104BB114007A3E23 /* BarCallbacks.m */,
 				FA0017C91054F16500C8787A /* PlatformCallbacks.h */,
 				FA0017CA1054F16500C8787A /* PlatformCallbacks.m */,
+				FA18E6AA10590C6C00F80D1B /* BallCallbacks.h */,
+				FA18E6AB10590C6C00F80D1B /* BallCallbacks.m */,
+				FA18E6AD10590CE500F80D1B /* BaseCallbacks.h */,
+				FA18E6AE10590CE500F80D1B /* BaseCallbacks.m */,
 			);
-			name = box;
+			name = callbacks;
 			sourceTree = "<group>";
 		};
 		FAA483D2104BAA3000449E27 /* world */ = {
@@ -215,6 +225,8 @@
 				FAA264DC104BB13D007A3E23 /* VectorBox.m in Sources */,
 				FA0017CB1054F16500C8787A /* PlatformCallbacks.m in Sources */,
 				FA0017DA1054F35400C8787A /* World.m in Sources */,
+				FA18E6AC10590C6C00F80D1B /* BallCallbacks.m in Sources */,
+				FA18E6AF10590CE500F80D1B /* BaseCallbacks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

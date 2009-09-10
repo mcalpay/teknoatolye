@@ -49,6 +49,21 @@ void worldTick(int value) {
 		vbox.y += vbox.distance*sin(vbox.angle);
 	}
 	
+	for( int i = 0; i < len; i++) {
+		VectorBox * vbox =[world.boxes objectAtIndex:i];
+		if( !vbox.changesAngleAfterCollision) {
+			continue;
+		}
+		for( int j = 0; j < len; j++) {
+			if( i == j) {
+				continue;
+			}
+			
+			VectorBox * obox =[world.boxes objectAtIndex:j];
+			[vbox detectCollision:obox];
+		}
+	}
+	
 	glutPostRedisplay();
 	glutTimerFunc(world.milis,worldTick,1);
 }

@@ -13,6 +13,8 @@
 #import "World.h"
 #import "PlatformCallbacks.h"
 #import "BarCallbacks.h"
+#import "BallCallbacks.h"
+#import "BaseCallbacks.h"
 
 int main(int argc, char *argv[]) {	
 	// Initialize GLUT
@@ -43,14 +45,22 @@ int main(int argc, char *argv[]) {
 	// display call back for current window
 	// needs one
 	//BaseCallbacks * callBack = [[[CircleCallbacks alloc] init:200 y:150 r:10] retain];
-	[[BarCallbacks alloc] initWithRect:390 y1:10 w:10 h:280];
-	[[BarCallbacks alloc] initWithRect:0 y1:10 w:10 h:280];
-	[[BarCallbacks alloc] initWithRect:0 y1:0 w:400 h:10];
+	BaseCallbacks * w1 = [[BarCallbacks alloc] initWithRect:390 y1:10 w:10 h:280];
+	BaseCallbacks * w2 = [[BarCallbacks alloc] initWithRect:0 y1:10 w:10 h:280];
+	BaseCallbacks * w3 = [[BarCallbacks alloc] initWithRect:0 y1:0 w:400 h:10];
 	
-	PlatformCallbacks * p = [[PlatformCallbacks alloc] initWithRect:100 y1:290 w:100 h:10 distance:10];
+	BaseCallbacks * p = [[PlatformCallbacks alloc] initWithRect:100 y1:290 w:100 h:10 distance:10];
+	BaseCallbacks * ball = [[BallCallbacks alloc] initWithRect:200 y1:150 w:20 h:20 dist:3.0 ang:M_PI*2 / 6];
 	World * world = [World world];
-	[world startTickingEveryMilis:10];
+
 	[world addVectorBox:p.box];
+	[world addVectorBox:ball.box];
+	[world addVectorBox:w1.box];
+	[world addVectorBox:w2.box];
+	[world addVectorBox:w3.box];
+	
+	[world startTickingEveryMilis:20];
+	
 	glutMainLoop();
 	
 	return 0;

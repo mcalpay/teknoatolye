@@ -11,11 +11,14 @@
 
 @interface VectorBox : NSObject {
 	float x, y, xr, yr, distance, angle;
+	bool changesAngleAfterCollision;
 }
 
 @property float x, y, xr, yr, distance, angle;
+@property bool changesAngleAfterCollision;
 
 -(id) initWithX:(float)_x y:(float)_y xr:(float)_xr yr:(float)_yr;
 -(id) initWithX:(float)_x y:(float)_y xr:(float)_xr yr:(float)_yr distance:(float) _d angle:(float) _a;
+-(id) detectCollision:(VectorBox *) obox;
 
 @end

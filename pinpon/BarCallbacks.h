@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BaseCallbacks.h"
 #import "VectorBox.h"
 
-@interface BarCallbacks : NSObject {
+@interface BarCallbacks : BaseCallbacks {
 	
-	VectorBox * box;
-
 }
-
-@property (readonly) VectorBox * box;
-
--(id) initWithRect:(float) _x1 y1:(float) _y1 w:(float) _w h:(float) _h;
--(id) init;
 
 @end
