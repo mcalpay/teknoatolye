@@ -241,7 +241,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project://F:\work\projects\sinek\sinek.ipr" />
+    <option name="state" value="project://F:\work\projects\teknoatolye\sinek\sinek.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -276,81 +276,52 @@
     <library name="web">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/src/main/web/WEB-INF/lib" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/management" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/xbean" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/naming" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/plus" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/win32" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jsp-2.1" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jsp-2.0" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/ext" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/annotations" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/terracotta" />
-        <root url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jre1.5" />
+        <root url="file://$PROJECT_DIR$/../../../tools/mortbay/jetty-6.1.19/lib/jsp-2.1" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/disable-unicode-escaping/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/write-attribute-script-enabled/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/flash/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/nested-datatables/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/absolute-ordering/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/test" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/write-attribute-script-disabled/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/nested-loadbundles/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-statemanager/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/string-converter/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/command-link-back-button/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/document-ordering/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/property-resolver-jsp/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/src/test/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/build/generate" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-lifecycle/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/wcag-datatable/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/src" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/empty-string-as-null/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/el-performance/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/injectionprovider/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/annotation-restrictions/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/jar-ordering/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/invalid-mapping/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-tools/src" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest/src" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-application/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/jsp-flash/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/clientside-statesaving/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-variableresolver/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/disable-bean-validator/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/never-unwrap-exceptions/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/src/main/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/build/generate" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/core-tags/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/late-bindings/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/view-expired/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/converter-property-editor/src/java" />
-        <root url="file://$PROJECT_DIR$/../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/resource-locale-prefix/src/java" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-logger-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-servlet-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-servlet-int-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-se-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-spi-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-api-sources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../tools/jboss/weld-1.0.0/lib/weld/weld-core-sources.jar!/" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/nested-datatables/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/converter-property-editor/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-lifecycle/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/build/generate" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest/src" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/resource-locale-prefix/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/test" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/nested-loadbundles/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/build/generate" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/document-ordering/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/el-performance/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/never-unwrap-exceptions/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/string-converter/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/late-bindings/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/empty-string-as-null/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/view-expired/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/property-resolver-jsp/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-api/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-statemanager/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/src" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/core-tags/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/write-attribute-script-disabled/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/jar-ordering/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-variableresolver/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/flash/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/clientside-statesaving/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/write-attribute-script-enabled/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/invalid-mapping/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/disable-unicode-escaping/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/command-link-back-button/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/jsp-flash/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/absolute-ordering/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-tools/src" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/replace-application/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/disable-bean-validator/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/annotation-restrictions/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/injectionprovider/src/java" />
+        <root url="file://$PROJECT_DIR$/../../../tools/sun/jsf/mojarra-2.0.1-FCS-source/jsf-ri/systest-per-webapp/wcag-datatable/src/java" />
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/src/main/web/WEB-INF/lib" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/annotations" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/ext" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jre1.5" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jsp-2.0" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/jsp-2.1" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/management" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/naming" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/plus" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/terracotta" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/win32" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../tools/mortbay/jetty-6.1.19/lib/xbean" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../tools/mortbay/jetty-6.1.19/lib/jsp-2.1" recursive="false" />
     </library>
   </component>
 </project>

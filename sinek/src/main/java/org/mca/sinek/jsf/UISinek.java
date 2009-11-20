@@ -1,6 +1,5 @@
 package org.mca.sinek.jsf;
 
-import com.sun.el.ValueExpressionImpl;
 import com.sun.faces.el.ELUtils;
 
 import javax.faces.component.UIInput;
