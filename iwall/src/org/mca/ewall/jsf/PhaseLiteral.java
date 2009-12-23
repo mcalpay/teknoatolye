@@ -7,7 +7,6 @@ package org.mca.ewall.jsf;
 import javax.enterprise.util.AnnotationLiteral;
 
 /**
- *
  * @author malpay
  */
 public class PhaseLiteral extends AnnotationLiteral<PhaseEventDefinition> implements PhaseEventDefinition {

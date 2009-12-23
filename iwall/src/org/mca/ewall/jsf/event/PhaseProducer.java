@@ -6,6 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Any;
 import javax.enterprise.util.AnnotationLiteral;
+import javax.faces.event.PhaseEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -15,10 +16,10 @@ import java.io.Serializable;
 public class PhaseProducer implements Serializable {
 
     @Inject @Any
-    private Event<PhaseEventHolder> phaseEvent;
+    private Event<PhaseEvent> phaseEvent;
 
 
-    public void fireEvent(PhaseEventHolder phaseEventHolder, AnnotationLiteral<PhaseEventDefinition> annotationLiteral) {
+    public void fireEvent(PhaseEvent phaseEventHolder, AnnotationLiteral<PhaseEventDefinition> annotationLiteral) {
         phaseEvent.select(annotationLiteral).fire(phaseEventHolder);
     }
 }
