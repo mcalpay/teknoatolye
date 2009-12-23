@@ -1,4 +1,4 @@
-package org.mca.ewall.jsf;
+package org.mca.ewall.jsf.lifecycle;
 
 /**
  * @author malpay
