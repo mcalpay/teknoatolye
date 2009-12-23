@@ -7,7 +7,7 @@
       http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
    <lifecycle>
-      <phase-listener>org.mca.ewall.jsf.ProxyPhaseListener</phase-listener>
+      <phase-listener>org.mca.ewall.jsf.lifecycle.ProxyPhaseListener</phase-listener>
    </lifecycle>
 
 </faces-config>

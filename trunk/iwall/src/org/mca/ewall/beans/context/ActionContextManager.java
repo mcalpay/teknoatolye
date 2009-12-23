@@ -6,9 +6,9 @@
 package org.mca.ewall.beans.context;
 
 import org.jboss.weld.context.api.helpers.ConcurrentHashMapBeanStore;
-import org.mca.ewall.jsf.AfterBeforeEnum;
-import org.mca.ewall.jsf.CycleId;
-import org.mca.ewall.jsf.PhaseEventDefinition;
+import org.mca.ewall.jsf.lifecycle.AfterBeforeEnum;
+import org.mca.ewall.jsf.lifecycle.CycleId;
+import org.mca.ewall.jsf.lifecycle.PhaseEventDefinition;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
