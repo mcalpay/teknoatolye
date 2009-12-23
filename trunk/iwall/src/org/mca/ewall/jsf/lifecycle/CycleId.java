@@ -1,7 +1,9 @@
 package org.mca.ewall.jsf.lifecycle;
 
 /**
- * @author malpay
+ * Defines the phases.
+ * Phase ordinals must match with jsf phase ordinals.
+ * @author mcalpay
  */
 public enum CycleId {
     ANY, 

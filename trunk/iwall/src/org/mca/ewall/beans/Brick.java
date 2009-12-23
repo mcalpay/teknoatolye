@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.inject.Named;
 
 /**
+ * A Brick on the wall that has some text 
  * @author mcalpay
  */
 @ActionScoped
