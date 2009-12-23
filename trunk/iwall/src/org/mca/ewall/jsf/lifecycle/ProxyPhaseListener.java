@@ -6,7 +6,7 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-import org.mca.ewall.jsf.lifecycle.event.PhaseProducer;
+import org.mca.ewall.jsf.lifecycle.PhaseProducer;
 
 /**
  * Propogates jsf phase events to CDI beans 
