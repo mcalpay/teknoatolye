@@ -15,6 +15,7 @@ import javax.enterprise.event.Observes;
 import javax.faces.event.PhaseEvent;
 
 /**
+ * Manages the action-context
  * @author malpay
  */
 @ApplicationScoped
