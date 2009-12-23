@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mca.ewall.beans;
 
 import org.mca.ewall.beans.context.ActionScoped;
@@ -10,7 +5,7 @@ import java.io.Serializable;
 import javax.inject.Named;
 
 /**
- * @author malpay
+ * @author mcalpay
  */
 @ActionScoped
 @Named("newBrick")

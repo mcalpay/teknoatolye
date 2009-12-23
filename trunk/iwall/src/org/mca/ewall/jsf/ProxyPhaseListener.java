@@ -11,7 +11,6 @@ import javax.inject.Inject;
 
 import org.jboss.weld.BeanManagerImpl;
 import org.jboss.weld.Container;
-import org.mca.ewall.jsf.event.PhaseEventHolder;
 import org.mca.ewall.jsf.event.PhaseProducer;
 
 /**
@@ -34,10 +33,9 @@ public class ProxyPhaseListener
     private void fireEvent(PhaseEvent event, AfterBeforeEnum when) {
         final int ordinal = event.getPhaseId().getOrdinal();
         final CycleId[] cycles = CycleId.values();
-        PhaseEventHolder phaseEventHolder = new PhaseEventHolder(event);
         AnnotationLiteral<PhaseEventDefinition> annotationLiteral =
                 new PhaseLiteral(cycles[ordinal], when);
-        getPhaseProducer().fireEvent(phaseEventHolder,annotationLiteral);
+        getPhaseProducer().fireEvent(event,annotationLiteral);
     }
 
     private PhaseProducer getPhaseProducer() {
