@@ -1,8 +1,9 @@
-package org.mca.ewall.beans;
+package org.mca.ewall.domain;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * Holds bricks
  * @author mcalpay
  */
+@Entity
 public class Wall implements Serializable {
 
     private String name;

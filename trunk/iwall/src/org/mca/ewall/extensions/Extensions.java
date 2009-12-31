@@ -11,7 +11,7 @@ import org.mca.ewall.beans.context.ActionContext;
  * Extension adding the action-context
  * @author mcalpay
  */
-public class Extensions implements Extension, Service{
+public class Extensions implements Extension, Service {
 
     public void afterBeanDiscovery(@Observes AfterBeanDiscovery event, BeanManager manager) {
         event.addContext(ActionContext.getInstance());
