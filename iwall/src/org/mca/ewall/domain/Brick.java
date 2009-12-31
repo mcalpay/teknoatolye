@@ -1,4 +1,4 @@
-package org.mca.ewall.beans;
+package org.mca.ewall.domain;
 
 import org.mca.ewall.beans.context.ActionScoped;
 import java.io.Serializable;
