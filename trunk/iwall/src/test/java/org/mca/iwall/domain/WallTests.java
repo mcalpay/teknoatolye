@@ -2,7 +2,6 @@ package org.mca.iwall.domain;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mca.iwall.domain.Wall;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,7 +11,7 @@ public class WallTests {
 
     @Test
     public void testCanPersistAWall() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("bigwall");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("main");
         EntityManager manager = factory.createEntityManager();
         String name = "Test_Wall";
         Wall wall = new Wall("Test_Wall");
