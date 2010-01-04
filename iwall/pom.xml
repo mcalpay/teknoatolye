@@ -39,12 +39,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
             <version>3.3.2.ga</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>javax.transaction</groupId>
-                    <artifactId>jta</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -61,6 +55,16 @@
             <artifactId>junit</artifactId>
             <version>4.5</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
         </dependency>
     </dependencies>
 </project>
