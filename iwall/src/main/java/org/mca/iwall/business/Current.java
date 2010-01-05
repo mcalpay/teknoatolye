@@ -1,36 +1,44 @@
 package org.mca.iwall.business;
 
+import org.mca.iwall.beans.security.Anonymous;
 import org.mca.iwall.beans.security.Principal;
 import org.mca.iwall.domain.User;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import java.io.Serializable;
 
 @SessionScoped
 @Named("current")
 public class Current implements Serializable {
 
-    private User user = ANONYMOUS;
-    
-    private static final User ANONYMOUS = new User("Anonymous");
+    @Inject
+    @Anonymous
+    private User user;
+
+    @Inject    
+    private EntityManager entityManager;
 
     public User getUser() {
         return user;
     }
 
-    public void logout() {
-        this.user = ANONYMOUS;
-    }
-
     public String checkLogin(User user) {
-        if("testus".equals(user.getName())) {
-            this.user = user;
+        try {
+            this.user = (User) entityManager.createNamedQuery(User.Queries.GETUSERBYNAME)
+                .setParameter(1,user.getName())
+                .getSingleResult();
             return "/index";
+        } catch(NoResultException nre) {
+            return "";
+        } finally {
+            entityManager.close();
         }
-        return "";
     }
 
     @Produces
