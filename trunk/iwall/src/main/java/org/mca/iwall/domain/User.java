@@ -1,11 +1,8 @@
 package org.mca.iwall.domain;
 
-import org.mca.iwall.web.filters.FilterDefinition;
-import org.mca.iwall.web.filters.AfterBeforeFilterEnum;
-import org.mca.iwall.web.filters.RequestResponseWrapper;
+import org.mca.iwall.beans.security.Anonymous;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 import javax.persistence.*;
@@ -74,13 +71,13 @@ public class User implements Principal, Serializable {
                 '}';
     }
 
-    private void checkUser(
+    /** private void checkUser(
             @Observes
             @FilterDefinition(when = AfterBeforeFilterEnum.REQUEST)
             RequestResponseWrapper rr
     ) {
         System.out.println("check user...");
-    }
+    }*/
 
     @Produces
     @RequestScoped
@@ -89,4 +86,9 @@ public class User implements Principal, Serializable {
         return new User("");
     }
 
+    @Produces
+    @Anonymous
+    private User getAnonymous() {
+        return new User("Anonymous");
+    }
 }
