@@ -16,15 +16,15 @@ public class ProxyPhaseListener
     private PhaseProducer phaseProducer;
 
     public void afterPhase(PhaseEvent event) {
-        fireEvent(event,AfterBeforeEnum.AFTER);
+        fireEvent(event, AfterBeforePhaseEnum.AFTER);
     }
 
 
     public void beforePhase(PhaseEvent event) {
-        fireEvent(event,AfterBeforeEnum.BEFORE);
+        fireEvent(event, AfterBeforePhaseEnum.BEFORE);
     }
 
-    private void fireEvent(PhaseEvent event, AfterBeforeEnum when) {
+    private void fireEvent(PhaseEvent event, AfterBeforePhaseEnum when) {
         final int ordinal = event.getPhaseId().getOrdinal();
         final CycleId[] cycles = CycleId.values();
         AnnotationLiteral<PhaseEventDefinition> annotationLiteral =
