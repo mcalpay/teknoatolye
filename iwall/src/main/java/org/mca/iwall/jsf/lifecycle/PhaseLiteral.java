@@ -11,9 +11,9 @@ public class PhaseLiteral extends AnnotationLiteral<PhaseEventDefinition> implem
 
     private CycleId cycle;
     
-    private AfterBeforeEnum when;
+    private AfterBeforePhaseEnum when;
 
-    public PhaseLiteral(CycleId cycle, AfterBeforeEnum when) {
+    public PhaseLiteral(CycleId cycle, AfterBeforePhaseEnum when) {
         this.cycle = cycle;
         this.when = when;
     }
@@ -22,7 +22,7 @@ public class PhaseLiteral extends AnnotationLiteral<PhaseEventDefinition> implem
         return cycle;
     }
 
-    public AfterBeforeEnum when() {
+    public AfterBeforePhaseEnum when() {
         return when;
     }
 }

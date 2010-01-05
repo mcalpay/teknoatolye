@@ -1,5 +1,10 @@
 package org.mca.iwall.domain;
 
+import org.mca.iwall.web.filters.FilterDefinition;
+import org.mca.iwall.web.filters.AfterBeforeFilterEnum;
+import org.mca.iwall.web.filters.RequestResponseWrapper;
+
+import javax.enterprise.event.Observes;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +17,7 @@ public class User implements Principal {
 
     public enum Queries {
         ;
-        public static final String GETUSERBYNAME = "getUserByName";
+        public static final String GETUSERBYNAME = "User.getUserByName";
     }
 
     @Id
@@ -66,5 +71,13 @@ public class User implements Principal {
         return "User{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    private void checkUser(
+            @Observes
+            @FilterDefinition(when = AfterBeforeFilterEnum.REQUEST)
+            RequestResponseWrapper rr
+    ) {
+        System.out.println("check user...");
     }
 }

@@ -11,9 +11,9 @@ import javax.inject.Qualifier;
  * @author mcalpay
  */
 @Qualifier
-@Target({FIELD,PARAMETER})
+@Target({PARAMETER})
 @Retention(RUNTIME)
 public @interface PhaseEventDefinition {
     CycleId value();
-    AfterBeforeEnum when();
+    AfterBeforePhaseEnum when();
 }

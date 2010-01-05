@@ -20,7 +20,7 @@ public class PhaseProducer implements Serializable {
     @Inject @Any
     private Event<PhaseEvent> phaseEvent;
 
-    public void fireEvent(PhaseEvent phaseEventHolder, AnnotationLiteral<PhaseEventDefinition> annotationLiteral) {
-        phaseEvent.select(annotationLiteral).fire(phaseEventHolder);
+    public void fireEvent(PhaseEvent event, AnnotationLiteral<PhaseEventDefinition> annotationLiteral) {
+        phaseEvent.select(annotationLiteral).fire(event);
     }
 }

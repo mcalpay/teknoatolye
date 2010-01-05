@@ -1,7 +1,7 @@
 package org.mca.iwall.beans.context;
 
 import org.jboss.weld.context.api.helpers.ConcurrentHashMapBeanStore;
-import org.mca.iwall.jsf.lifecycle.AfterBeforeEnum;
+import org.mca.iwall.jsf.lifecycle.AfterBeforePhaseEnum;
 import org.mca.iwall.jsf.lifecycle.CycleId;
 import org.mca.iwall.jsf.lifecycle.PhaseEventDefinition;
 
@@ -18,7 +18,7 @@ public class ActionContextManager {
 
     private void activate(
             @Observes
-            @PhaseEventDefinition(value= CycleId.RESTORE_VIEW, when= AfterBeforeEnum.BEFORE)
+            @PhaseEventDefinition(value= CycleId.RESTORE_VIEW, when= AfterBeforePhaseEnum.BEFORE)
             PhaseEvent event
     ) {
         ActionContext.getInstance().setActive(true);
@@ -27,7 +27,7 @@ public class ActionContextManager {
 
     private  void deActivate(
             @Observes
-            @PhaseEventDefinition(value= CycleId.RENDER_RESPONSE, when= AfterBeforeEnum.AFTER)
+            @PhaseEventDefinition(value= CycleId.RENDER_RESPONSE, when= AfterBeforePhaseEnum.AFTER)
             PhaseEvent event
     ) {
         ActionContext.getInstance().destroy();
@@ -37,7 +37,7 @@ public class ActionContextManager {
 
     private void reActivate(
             @Observes
-            @PhaseEventDefinition(value= CycleId.INVOKE_APPLICATION, when= AfterBeforeEnum.AFTER)
+            @PhaseEventDefinition(value= CycleId.INVOKE_APPLICATION, when= AfterBeforePhaseEnum.AFTER)
             PhaseEvent event
     ) {
         deActivate(event);
