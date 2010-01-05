@@ -4,16 +4,17 @@ import org.mca.iwall.web.filters.FilterDefinition;
 import org.mca.iwall.web.filters.AfterBeforeFilterEnum;
 import org.mca.iwall.web.filters.RequestResponseWrapper;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.enterprise.inject.Produces;
+import javax.inject.Named;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.security.Principal;
 
 @Entity
 @NamedQuery(name = User.Queries.GETUSERBYNAME, query = "select u from User u where u.name = ?1")
-public class User implements Principal {
+public class User implements Principal, Serializable {
 
     public enum Queries {
         ;
@@ -80,4 +81,12 @@ public class User implements Principal {
     ) {
         System.out.println("check user...");
     }
+
+    @Produces
+    @RequestScoped
+    @Named("login")
+    private User getLogin() {
+        return new User("");
+    }
+
 }
