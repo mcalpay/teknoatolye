@@ -45,8 +45,8 @@ public class Current implements Serializable {
     @RequestScoped
     @Principal
     @Named("principal")
-    private User getPrincipal(Current current) {
-        return current.getUser();
+    private User getPrincipal() {
+        return this.getUser();
     }
 
 }
