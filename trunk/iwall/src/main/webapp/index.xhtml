@@ -15,16 +15,14 @@
         </h:form>
     </div>
     <div>
-        This is the : #{theWall.name} wall
-    </div>
-    <div>
+        This is the : #{wall.name} wall
         <h:form>
             <h:inputText value="#{newBrick.grafiti}"/>
-            <h:commandButton value="Paint" action="#{theWall.addBrick(newBrick)}"/>
+            <h:commandButton value="Paint" action="#{wall.addBrick(entityManager,newBrick)}"/>
         </h:form>
     </div>
     <div>
-        <h:dataTable value="#{theWall.bricks}" var="brk">
+        <h:dataTable value="#{wall.bricks}" var="brk">
             <h:column>#{brk.grafiti}</h:column>
         </h:dataTable>
     </div>
