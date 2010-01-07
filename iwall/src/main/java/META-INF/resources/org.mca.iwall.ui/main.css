@@ -1,14 +1,16 @@
 div.right {
     background-color: #F3FEFF;
-    float: right;
-    width: 22em;
-    padding: 1em 1em 1em 1em; 
+    padding: 5px 5px 5px 5px;
+    margin: 0px 200px 5px 680px;
+    width: 200px;
 }
 
 div.main  {
     background-color: #F3FEFF;
-    margin: 0 24em 0 8em;
-    padding: 1em 1em 1em 1em; 
+    width: 500px;
+    float:left;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 5px 5px 150px;
 }
 
 textarea.grafiti {
