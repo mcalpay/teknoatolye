@@ -1,12 +1,6 @@
 package org.mca.iwall.domain;
 
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Produces;
-import javax.inject.Named;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +18,7 @@ public class Wall implements Serializable {
 
     private String name;
 
-    @ManyToMany
+    @OneToMany
     private List<Brick> bricks = new ArrayList<Brick>();
 
     public Wall() {
@@ -58,22 +52,30 @@ public class Wall implements Serializable {
         this.bricks = bricks;
     }
 
-    public Brick addBrick(Brick b) {
+    public Brick addBrick(EntityManager entityManager,Brick b) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(b);
         bricks.add(b);
+        entityManager.merge(this);
+        entityManager.getTransaction().commit();
         return b;
     }
 
-    /**
-     * Creates a demo wall
-     * @return wall
-     */
-    @Produces
-    @SessionScoped
-    @Named("theWall")
-    private Wall buidTheWall() {
-        final Wall wall = new Wall("Berlin");
-        wall.addBrick(new Brick("Kirmizi"));
-        return wall;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Wall wall = (Wall) o;
+
+        if (name != null ? !name.equals(wall.name) : wall.name != null) return false;
+
+        return true;
     }
 
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
+    
 }

@@ -3,6 +3,7 @@ package org.mca.iwall.business;
 import org.mca.iwall.beans.security.Anonymous;
 import org.mca.iwall.beans.security.Principal;
 import org.mca.iwall.domain.User;
+import org.mca.iwall.domain.Wall;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
@@ -36,8 +37,6 @@ public class Current implements Serializable {
             return "/index";
         } catch(NoResultException nre) {
             return "";
-        } finally {
-            entityManager.close();
         }
     }
 
@@ -47,6 +46,14 @@ public class Current implements Serializable {
     @Named("principal")
     private User getPrincipal() {
         return this.getUser();
+    }
+
+    @Produces
+    @RequestScoped
+    @Principal
+    @Named("wall")
+    private Wall getWall() {
+        return this.getUser().getWall();
     }
 
 }

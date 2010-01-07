@@ -10,7 +10,10 @@ import java.io.Serializable;
 import java.security.Principal;
 
 @Entity
-@NamedQuery(name = User.Queries.GETUSERBYNAME, query = "select u from User u where u.name = ?1")
+@NamedQuery(name = User.Queries.GETUSERBYNAME,
+        query = "select u from User u " +
+                "join fetch u.wall w left join fetch w.bricks " +
+                "where u.name = ?1")
 public class User implements Principal, Serializable {
 
     public enum Queries {
@@ -23,6 +26,9 @@ public class User implements Principal, Serializable {
     private Long id;
 
     private String name;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Wall wall;
 
     public User() {
     }
@@ -39,12 +45,45 @@ public class User implements Principal, Serializable {
         this.id = id;
     }
 
+    public Wall getWall() {
+        return wall;
+    }
+
+    public void setWall(Wall wall) {
+        this.wall = wall;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Produces
+    @RequestScoped
+    @Named("login")
+    private User getLogin() {
+        return new User("");
+    }
+
+    @Produces
+    @Anonymous
+    private User getAnonymous(EntityManagerFactory entityManagerFactory) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        User anonymous = new User("Anonymous");
+        anonymous.setWall(new Wall("Anonymous"));
+        try {
+            anonymous = (User) entityManager.createNamedQuery(Queries.GETUSERBYNAME)
+                    .setParameter(1, anonymous.getName()).getSingleResult();
+        } catch (NoResultException nre) {
+            entityManager.getTransaction().begin();
+            entityManager.persist(anonymous);
+            entityManager.getTransaction().commit();
+        }
+
+        return anonymous;
     }
 
     @Override
@@ -71,24 +110,4 @@ public class User implements Principal, Serializable {
                 '}';
     }
 
-    /** private void checkUser(
-            @Observes
-            @FilterDefinition(when = AfterBeforeFilterEnum.REQUEST)
-            RequestResponseWrapper rr
-    ) {
-        System.out.println("check user...");
-    }*/
-
-    @Produces
-    @RequestScoped
-    @Named("login")
-    private User getLogin() {
-        return new User("");
-    }
-
-    @Produces
-    @Anonymous
-    private User getAnonymous() {
-        return new User("Anonymous");
-    }
 }
