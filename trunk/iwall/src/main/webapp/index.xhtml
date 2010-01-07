@@ -5,25 +5,31 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+    <h:outputStylesheet library="org.mca.iwall.ui" name="main.css" target="head"/>
     <title>Facelet Title</title>
 </h:head>
 <h:body>
-    <div>
-        <div>#{principal.name}</div>
-        <h:form>
-            <h:commandLink value="Login" action="/login" />
-        </h:form>
+    <div class="right">
+        <div><span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}"
+                                                               height="40px"/></span>
+             <span style="vertical-align:top;">#{principal.name}</span></div>
+        <div><h:form>
+            <h:commandLink value="Login" action="/login"/>
+        </h:form></div>
     </div>
-    <div>
+    <div class="main">
         This is the : #{wall.name} wall
         <h:form>
-            <h:inputText value="#{newBrick.grafiti}"/>
-            <h:commandButton value="Paint" action="#{wall.addBrick(entityManager,newBrick)}"/>
+            <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
+
+            <div><h:commandButton value="Paint" action="#{wall.addBrick(entityManager,newBrick)}"/></div>
         </h:form>
-    </div>
-    <div>
-        <h:dataTable value="#{wall.bricks}" var="brk">
-            <h:column>#{brk.grafiti}</h:column>
+        <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
+            <h:column>
+                <hr/>
+                <span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}" height="40px"/></span>
+                <span style="vertical-align:top;">#{brk.grafiti}</span>
+            </h:column>
         </h:dataTable>
     </div>
 </h:body>

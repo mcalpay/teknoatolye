@@ -1,0 +1,16 @@
+div.right {
+    background-color: #F3FEFF;
+    float: right;
+    width: 22em;
+    padding: 1em 1em 1em 1em; 
+}
+
+div.main  {
+    background-color: #F3FEFF;
+    margin: 0 24em 0 8em;
+    padding: 1em 1em 1em 1em; 
+}
+
+textarea.grafiti {
+    width:100%;
+}
