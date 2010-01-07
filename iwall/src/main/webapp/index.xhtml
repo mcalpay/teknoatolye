@@ -21,8 +21,7 @@
         This is the : #{wall.name} wall
         <h:form>
             <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
-
-            <div><h:commandButton value="Paint" action="#{wall.addBrick(entityManager,newBrick)}"/></div>
+            <div><h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/></div>
         </h:form>
         <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
             <h:column>
