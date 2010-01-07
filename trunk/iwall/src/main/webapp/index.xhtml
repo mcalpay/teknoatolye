@@ -9,18 +9,11 @@
     <title>Facelet Title</title>
 </h:head>
 <h:body>
-    <div class="right">
-        <div><span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}"
-                                                               height="40px"/></span>
-             <span style="vertical-align:top;">#{principal.name}</span></div>
-        <div><h:form>
-            <h:commandLink value="Login" action="/login"/>
-        </h:form></div>
-    </div>
     <div class="main">
         This is the : #{wall.name} wall
         <h:form>
             <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
+
             <div><h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/></div>
         </h:form>
         <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
@@ -31,5 +24,14 @@
             </h:column>
         </h:dataTable>
     </div>
+    <div class="right">
+        <div><span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}"
+                                                               height="40px"/></span>
+            <span style="vertical-align:top;">#{principal.name}</span></div>
+        <div><h:form>
+            <h:commandLink value="Login" action="/login"/>
+        </h:form></div>
+    </div>
+
 </h:body>
 </html>
