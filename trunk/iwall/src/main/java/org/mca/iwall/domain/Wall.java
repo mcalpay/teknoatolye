@@ -18,7 +18,7 @@ public class Wall implements Serializable {
 
     private String name;
 
-    @OneToMany
+    @ManyToMany
     private List<Brick> bricks = new ArrayList<Brick>();
 
     public Wall() {
@@ -50,15 +50,6 @@ public class Wall implements Serializable {
 
     public void setBricks(List<Brick> bricks) {
         this.bricks = bricks;
-    }
-
-    public Brick addBrick(EntityManager entityManager,Brick b) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(b);
-        bricks.add(b);
-        entityManager.merge(this);
-        entityManager.getTransaction().commit();
-        return b;
     }
 
     @Override

@@ -8,17 +8,24 @@ import javax.inject.Named;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@NamedQueries({
 @NamedQuery(name = User.Queries.GETUSERBYNAME,
-        query = "select u from User u " +
-                "join fetch u.wall w left join fetch w.bricks " +
-                "where u.name = ?1")
+            query = "select u from User u " +
+                    "join fetch u.wall w left join fetch w.bricks " +
+                    "where u.name = ?1"),
+@NamedQuery(name = User.Queries.GETUSERSFOLLOWERSBYNAME,
+            query = "select u.followers from User u " +
+                    "where u.name = ?1")})
 public class User implements Principal, Serializable {
 
     public enum Queries {
         ;
         public static final String GETUSERBYNAME = "User.getUserByName";
+        public static final String GETUSERSFOLLOWERSBYNAME = "User.getUsersFollowers";
     }
 
     @Id
@@ -27,8 +34,13 @@ public class User implements Principal, Serializable {
 
     private String name;
 
+    private byte [] avatar;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Wall wall;
+
+    @ManyToMany
+    private List<User> followers = new ArrayList<User>();
 
     public User() {
     }
@@ -43,6 +55,22 @@ public class User implements Principal, Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public byte[] getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(byte[] avatar) {
+        this.avatar = avatar;
+    }
+
+    public List<User> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(List<User> followers) {
+        this.followers = followers;
     }
 
     public Wall getWall() {
@@ -61,6 +89,25 @@ public class User implements Principal, Serializable {
         this.name = name;
     }
 
+    public Brick addBrick(EntityManager entityManager,Brick brick) {
+        entityManager.getTransaction().begin();
+
+        entityManager.persist(brick);
+        getWall().getBricks().add(brick);
+        entityManager.merge(getWall());
+
+        List<User> users = entityManager.createNamedQuery(Queries.GETUSERSFOLLOWERSBYNAME)
+                .setParameter(1,getName()).getResultList();
+        
+        for(User user : users) {
+            user.getWall().getBricks().add(brick);
+            entityManager.merge(user.getWall());
+        }
+
+        entityManager.getTransaction().commit();
+        return brick;
+    }
+    
     @Produces
     @RequestScoped
     @Named("login")

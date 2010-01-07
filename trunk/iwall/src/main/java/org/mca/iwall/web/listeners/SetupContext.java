@@ -1,5 +1,6 @@
 package org.mca.iwall.web.listeners;
 
+import org.mca.iwall.beans.security.Anonymous;
 import org.mca.iwall.domain.User;
 import org.mca.iwall.domain.Wall;
 
@@ -14,6 +15,10 @@ public class SetupContext implements ServletContextListener {
 
     @Inject
     private EntityManagerFactory entityManagerFactory;
+
+    @Inject
+    @Anonymous
+    private User anonymous;
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
@@ -30,6 +35,7 @@ public class SetupContext implements ServletContextListener {
             entityManager.getTransaction().begin();
             User user = new User("testus");
             user.setWall(new Wall("demo"));
+            user.getFollowers().add(anonymous);
             entityManager.persist(user);
             entityManager.getTransaction().commit();
         }
