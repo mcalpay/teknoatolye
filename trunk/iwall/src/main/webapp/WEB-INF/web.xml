@@ -7,42 +7,6 @@
         <param-value>Development</param-value>
     </context-param>
 
-    <listener>
-        <listener-class>org.mca.iwall.web.listeners.SetupContext</listener-class>
-    </listener>
-
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet>
-        <servlet-name>Rest Servlet</servlet-name>
-        <servlet-class>org.mca.iwall.web.servlets.RestServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/faces/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>Rest Servlet</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
-
-    <filter>
-        <filter-name>Proxy Filter</filter-name>
-        <filter-class>org.mca.iwall.web.filters.ProxyFilter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>Proxy Filter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
     <session-config>
         <session-timeout>
             30

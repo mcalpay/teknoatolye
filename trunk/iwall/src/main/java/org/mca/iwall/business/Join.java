@@ -1,14 +1,16 @@
 package org.mca.iwall.business;
 
-import org.apache.commons.fileupload.FileItem;
 import org.mca.iwall.domain.User;
 import org.mca.iwall.domain.Wall;
+import org.mca.iwall.utils.IOUtils;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.servlet.http.Part;
+import java.io.IOException;
 import java.io.Serializable;
 
 @RequestScoped
@@ -36,9 +38,13 @@ public class Join implements Serializable {
         return "/index";
     }
 
-    public void uploadAvatar(@Observes FileItem item) {
+    public void uploadAvatar(@Observes Part item) {
         if ("image/jpeg".equals(item.getContentType())) {
-            this.avatar = item.get();
+            try {
+                this.avatar = IOUtils.toByteArray(item.getInputStream());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
