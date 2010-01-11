@@ -1,7 +1,7 @@
 package org.mca.iwall.web.listeners;
 
-import org.mca.iwall.beans.security.Anonymous;
 import org.mca.iwall.domain.User;
+import org.mca.iwall.domain.UserQualifier;
 import org.mca.iwall.domain.Wall;
 
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ public class SetupContext implements ServletContextListener {
     private EntityManagerFactory entityManagerFactory;
 
     @Inject
-    @Anonymous
+    @UserQualifier(User.Qualifiers.ANONYMOUS)
     private User anonymous;
 
     @Override

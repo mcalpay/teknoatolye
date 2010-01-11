@@ -1,7 +1,5 @@
 package org.mca.iwall.domain;
 
-import org.mca.iwall.beans.security.Anonymous;
-
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
@@ -13,13 +11,13 @@ import java.util.List;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = User.Queries.GETUSERBYNAME,
-            query = "select u from User u " +
-                    "join fetch u.wall w left join fetch w.bricks " +
-                    "where u.name = ?1"),
-@NamedQuery(name = User.Queries.GETUSERSFOLLOWERSBYNAME,
-            query = "select u.followers from User u " +
-                    "where u.name = ?1")})
+        @NamedQuery(name = User.Queries.GETUSERBYNAME,
+                query = "select u from User u " +
+                        "join fetch u.wall w left join fetch w.bricks " +
+                        "where u.name = ?1"),
+        @NamedQuery(name = User.Queries.GETUSERSFOLLOWERSBYNAME,
+                query = "select u.followers from User u " +
+                        "where u.name = ?1")})
 public class User implements Principal, Serializable {
 
     public enum Queries {
@@ -28,13 +26,17 @@ public class User implements Principal, Serializable {
         public static final String GETUSERSFOLLOWERSBYNAME = "User.getUsersFollowers";
     }
 
+    public enum Qualifiers {
+        LOGIN, PRINCIPAL, ANONYMOUS
+    }
+
     @Id
     @GeneratedValue
     private Long id;
 
     private String name;
 
-    private byte [] avatar;
+    private byte[] avatar;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Wall wall;
@@ -89,7 +91,7 @@ public class User implements Principal, Serializable {
         this.name = name;
     }
 
-    public Brick addBrick(EntityManager entityManager,Brick brick) {
+    public Brick addBrick(EntityManager entityManager, Brick brick) {
         entityManager.getTransaction().begin();
 
         entityManager.persist(brick);
@@ -97,9 +99,9 @@ public class User implements Principal, Serializable {
         entityManager.merge(getWall());
 
         List<User> users = entityManager.createNamedQuery(Queries.GETUSERSFOLLOWERSBYNAME)
-                .setParameter(1,getName()).getResultList();
-        
-        for(User user : users) {
+                .setParameter(1, getName()).getResultList();
+
+        for (User user : users) {
             user.getWall().getBricks().add(brick);
             entityManager.merge(user.getWall());
         }
@@ -107,16 +109,18 @@ public class User implements Principal, Serializable {
         entityManager.getTransaction().commit();
         return brick;
     }
-    
+
+
     @Produces
     @RequestScoped
+    @UserQualifier(Qualifiers.LOGIN)
     @Named("login")
     private User getLogin() {
-        return new User("");
+        return new User();
     }
 
     @Produces
-    @Anonymous
+    @UserQualifier(Qualifiers.ANONYMOUS)
     private User getAnonymous(EntityManagerFactory entityManagerFactory) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         User anonymous = new User("Anonymous");

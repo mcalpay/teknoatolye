@@ -1,8 +1,7 @@
 package org.mca.iwall.business;
 
-import org.mca.iwall.beans.security.Anonymous;
-import org.mca.iwall.beans.security.Principal;
 import org.mca.iwall.domain.User;
+import org.mca.iwall.domain.UserQualifier;
 import org.mca.iwall.domain.Wall;
 
 import javax.enterprise.context.RequestScoped;
@@ -19,10 +18,10 @@ import java.io.Serializable;
 public class Current implements Serializable {
 
     @Inject
-    @Anonymous
+    @UserQualifier(User.Qualifiers.ANONYMOUS)
     private User user;
 
-    @Inject    
+    @Inject
     private EntityManager entityManager;
 
     public User getUser() {
@@ -32,17 +31,17 @@ public class Current implements Serializable {
     public String checkLogin(User user) {
         try {
             this.user = (User) entityManager.createNamedQuery(User.Queries.GETUSERBYNAME)
-                .setParameter(1,user.getName())
-                .getSingleResult();
+                    .setParameter(1, user.getName())
+                    .getSingleResult();
             return "/index";
-        } catch(NoResultException nre) {
+        } catch (NoResultException nre) {
             return "";
         }
     }
 
     @Produces
     @RequestScoped
-    @Principal
+    @UserQualifier(User.Qualifiers.PRINCIPAL)
     @Named("principal")
     private User getPrincipal() {
         return this.getUser();
@@ -50,10 +49,10 @@ public class Current implements Serializable {
 
     @Produces
     @RequestScoped
-    @Principal
     @Named("wall")
     private Wall getWall() {
-        return this.getUser().getWall();
+        User usr = this.getUser();
+        return usr.getWall();
     }
 
 }
