@@ -1,21 +1,21 @@
 package org.mca.iwall.web.filters;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Any;
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Part;
 import java.io.IOException;
 
+@WebFilter("/*")
 public class ProxyFilter implements Filter {
 
     @Inject
     @Any
-    private Event<FileItem> uploadEvents;
+    private Event<Part> uploadEvents;
 
     @Inject
     @Any
@@ -34,8 +34,8 @@ public class ProxyFilter implements Filter {
                 .select(new FilterLiteral(AfterBeforeFilterEnum.BEFORE))
                 .fire(new RequestResponseWrapper(servletRequest, servletResponse));
 
-        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-        if (isMultipart) {
+        String contenttype = request.getContentType();
+        if (contenttype != null && contenttype.startsWith("multipart/form-data")) {
             servletRequest = new MultipartRequestWrapper(request,uploadEvents);
         }
 
