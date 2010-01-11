@@ -93,7 +93,7 @@ public class User implements Principal, Serializable {
 
     public Brick addBrick(EntityManager entityManager, Brick brick) {
         entityManager.getTransaction().begin();
-
+        brick.setUser(this);
         entityManager.persist(brick);
         getWall().getBricks().add(brick);
         entityManager.merge(getWall());

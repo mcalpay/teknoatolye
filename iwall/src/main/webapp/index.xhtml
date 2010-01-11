@@ -19,17 +19,17 @@
         <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
             <h:column>
                 <hr/>
-                <span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}" height="40px"/></span>
+                <span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{brk.user.id}/avatar" height="40px"/></span>
                 <span style="vertical-align:top;">#{brk.grafiti}</span>
             </h:column>
         </h:dataTable>
     </div>
     <div class="right">
-        <div><span style="vertical-align:top;"><h:graphicImage value="#{resource['mca.jpg']}"
+        <div><span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{principal.id}/avatar"
                                                                height="40px"/></span>
             <span style="vertical-align:top;">#{principal.name}</span></div>
         <div><h:form>
-            <h:commandLink value="Login" action="/login"/> 
+            <h:commandLink value="Login" action="/login"/>
             <h:commandLink value="Join" action="/join"/>
         </h:form></div>
     </div>
