@@ -6,6 +6,7 @@ import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * A Brick on the wall that has some text 
@@ -21,6 +22,9 @@ public class Brick implements Serializable {
     private Long id;
 
     private String grafiti;
+
+    @ManyToOne
+    private User user;
 
     public Brick() {
     }
@@ -45,4 +49,11 @@ public class Brick implements Serializable {
         this.grafiti = grafiti;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
