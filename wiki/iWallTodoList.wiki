@@ -1,8 +1,6 @@
 #labels iWall,todo
- * do the join scenario
-  * add mail check
-  * need to do file upload
-   * develop a component ?
+ * display avatars of users
+ * add mail check to join scenario
  * order the timeline
  * display users images
  * integrate with bean validation
