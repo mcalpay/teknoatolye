@@ -1,13 +1,21 @@
 package org.mca.iwall.web.filters;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Any;
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public class ProxyFilter implements Filter {
+
+    @Inject
+    @Any
+    private Event<FileItem> uploadEvents;
 
     @Inject
     @Any
@@ -20,13 +28,21 @@ public class ProxyFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        
         filterEvent
-                .select(new FilterLiteral(AfterBeforeFilterEnum.REQUEST))
-                .fire(new RequestResponseWrapper(servletRequest,servletResponse));
-        filterChain.doFilter(servletRequest,servletResponse);
+                .select(new FilterLiteral(AfterBeforeFilterEnum.BEFORE))
+                .fire(new RequestResponseWrapper(servletRequest, servletResponse));
+
+        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+        if (isMultipart) {
+            servletRequest = new MultipartRequestWrapper(request,uploadEvents);
+        }
+
+        filterChain.doFilter(servletRequest, servletResponse);
         filterEvent
-                .select(new FilterLiteral(AfterBeforeFilterEnum.RESPONSE))
-                .fire(new RequestResponseWrapper(servletRequest,servletResponse));
+                .select(new FilterLiteral(AfterBeforeFilterEnum.AFTER))
+                .fire(new RequestResponseWrapper(servletRequest, servletResponse));
     }
 
     @Override
