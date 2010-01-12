@@ -8,14 +8,6 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
 
-/**
- part : >j_idt7<, >form-data; name="j_idt7">, <null|#]
- part : >j_idt7:j_idt9<, >form-data; name="j_idt7:j_idt9">, <null|#]
- part : >j_idt7:j_idt11<, >form-data; name="j_idt7:j_idt11">, <null|#]
- part : >avatar<, >form-data; name="avatar"; filename="827171242161642.jpg">, <null|#]
- part : >j_idt7:j_idt13<, >form-data; name="j_idt7:j_idt13">, <null|#]
- part : >javax.faces.ViewState<, >form-data; name="javax.faces.ViewState">, <null|#]
- */
 public class MultipartRequestWrapper extends HttpServletRequestWrapper {
 
     private Hashtable<String, String[]> params = new Hashtable<String, String[]>();
@@ -27,7 +19,6 @@ public class MultipartRequestWrapper extends HttpServletRequestWrapper {
 
             for (Part item : request.getParts()) {
                 String contentHeader = item.getHeader("content-disposition");
-                System.out.println("part : >" + item.getName() + "<, >" + contentHeader + ">, <" + item.getHeader("content-type]"));
                 if(contentHeader.contains("filename=")) {
                     uploadEvents.fire(item);
                 } else {
