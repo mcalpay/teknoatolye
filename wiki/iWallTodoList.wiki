@@ -1,7 +1,8 @@
 #labels iWall,todo
- * display avatars of users
- * add mail check to join scenario
  * order the timeline
- * display users images
- * integrate with bean validation
+  * every brick must be available in anonymous wall
  * do follow user scenario
+ * hsqldb için dump almaca ?
+ * integrate a search ...
+ * integrate with bean validation
+ * add mail check to join scenario
