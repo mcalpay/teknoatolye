@@ -2,7 +2,6 @@
  * order the timeline
   * every brick must be available in anonymous wall
  * do follow user scenario
- * hsqldb için dump almaca ?
  * integrate a search ...
  * integrate with bean validation
  * add mail check to join scenario
