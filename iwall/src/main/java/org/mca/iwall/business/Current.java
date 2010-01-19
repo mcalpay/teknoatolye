@@ -33,6 +33,7 @@ public class Current implements Serializable {
             this.user = (User) entityManager.createNamedQuery(User.Queries.GETUSERBYNAME)
                     .setParameter(1, user.getName())
                     .getSingleResult();
+            this.user.login();
             return "/index";
         } catch (NoResultException nre) {
             return "";
