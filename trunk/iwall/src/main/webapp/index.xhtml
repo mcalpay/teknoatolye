@@ -3,7 +3,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
     <h:outputStylesheet library="org.mca.iwall.ui" name="main.css" target="head"/>
     <title>Facelet Title</title>
@@ -11,28 +12,36 @@
 <h:body>
     <div class="main">
         This is the : #{wall.name} wall
-        <h:form>
-            <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
+        <ui:fragment rendered="#{principal.isLoggedIn()}">
+            <h:form>
+                <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
 
-            <div><h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/></div>
-        </h:form>
+                <div><h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/></div>
+            </h:form></ui:fragment>
         <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
             <h:column>
                 <hr/>
-                <span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{brk.user.id}/avatar" height="40px"/></span>
+                <span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{brk.user.id}/avatar"
+                                                                  height="40px"/></span>
                 <span style="vertical-align:top;">#{brk.grafiti}</span>
             </h:column>
         </h:dataTable>
     </div>
     <div class="right">
-        <div><span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{principal.id}/avatar"
-                                                               height="40px"/></span>
-            <span style="vertical-align:top;">#{principal.name}</span></div>
-        <div><h:form>
-            <h:commandLink value="Login" action="/login"/>
-            <h:commandLink value="Join" action="/join"/>
-        </h:form></div>
+        <h:form>
+            <ui:fragment rendered="#{principal.isLoggedIn()}">
+                <div><span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{principal.id}/avatar"
+                                                                       height="40px"/></span>
+                    <span style="vertical-align:top;">#{principal.name}</span></div>
+                <h:commandLink value="Logout" action="#{principal.logout()}"/> <br/>
+            </ui:fragment>
+            <ui:fragment rendered="#{!principal.isLoggedIn()}">
+                <div>
+                    <h:commandLink value="Login" action="/login"/> <br/>
+                    <h:commandLink value="Join" action="/join"/>
+                </div>
+            </ui:fragment>
+        </h:form>
     </div>
-
 </h:body>
 </html>

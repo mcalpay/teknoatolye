@@ -41,6 +41,9 @@ public class User implements Principal, Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Wall wall;
 
+    @Transient
+    private Boolean loggedIn = false;
+
     @ManyToMany
     private List<User> followers = new ArrayList<User>();
 
@@ -49,6 +52,18 @@ public class User implements Principal, Serializable {
 
     public User(String name) {
         this.name = name;
+    }
+
+    public Boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void login() {
+        this.loggedIn = true;
+    }
+
+    public void logout() {
+        this.loggedIn = false;
     }
 
     public Long getId() {

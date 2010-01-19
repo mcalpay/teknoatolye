@@ -1,6 +1,7 @@
 package org.mca.iwall.business;
 
 import org.mca.iwall.domain.User;
+import org.mca.iwall.domain.UserQualifier;
 import org.mca.iwall.domain.Wall;
 import org.mca.iwall.utils.IOUtils;
 
@@ -16,6 +17,10 @@ import java.io.Serializable;
 @RequestScoped
 @Named("join")
 public class Join implements Serializable {
+
+    @Inject
+    @UserQualifier(User.Qualifiers.ANONYMOUS)
+    private User anonymous;
 
     private String userName;
 
@@ -33,6 +38,7 @@ public class Join implements Serializable {
         User user = new User(userName);
         user.setWall(wall);
         user.setAvatar(avatar);
+        user.getFollowers().add(anonymous);
         entityManager.persist(user);
         entityManager.getTransaction().commit();
         return "/index";
