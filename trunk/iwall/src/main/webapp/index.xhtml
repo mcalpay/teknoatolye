@@ -7,14 +7,17 @@
       xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
     <h:outputStylesheet library="org.mca.iwall.ui" name="main.css" target="head"/>
-    <title>Facelet Title</title>
+    <title>The iWall</title>
 </h:head>
 <h:body>
+    <div class="messages">
+        <h:messages showSummary="true" showDetail="false" layout="table"/>
+    </div>
     <div class="main">
         This is the : #{wall.name} wall
         <ui:fragment rendered="#{principal.isLoggedIn()}">
             <h:form>
-                <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti" required="true"/>
+                <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
                 <div>
                     <h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/>
                 </div>
