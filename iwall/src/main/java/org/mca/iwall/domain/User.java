@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = User.Queries.GETUSERBYNAME,
                 query = "select u from User u " +
-                        "join fetch u.wall left join fetch w.bricks " +
+                        "join fetch u.wall w left join fetch w.bricks " +
                         "where u.name = ?1"),
         @NamedQuery(name = User.Queries.GETUSERSFOLLOWERSBYNAME,
                 query = "select u.followers from User u " +
