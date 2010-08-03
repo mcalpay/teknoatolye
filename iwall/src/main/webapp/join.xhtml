@@ -6,15 +6,22 @@
       xmlns:f="http://java.sun.com/jsf/core"
         >
 <h:head>
-    <title>Facelet Title</title>
+    <h:outputStylesheet library="org.mca.iwall.ui" name="main.css" target="head"/>
+    <title>Join</title>
 </h:head>
 <h:body>
-    <div>
+    <div class="main">
         <h:form enctype="multipart/form-data">
-            User : <h:inputText value="#{join.userName}"/>
-            Wall : <h:inputText value="#{join.wallName}"/>
-            Avatar : <input id="avatar" name="avatar" type="file" />
-            <h:commandButton value="Login" action="#{join.create}"/>
+            <div> User :
+                <h:inputText value="#{join.userName}"/>
+            </div>
+            <div> Wall :
+                <h:inputText value="#{join.wallName}"/>
+            </div>
+            <div>Avatar : <input id="avatar" name="avatar" type="file"/></div>
+            <div>
+                <h:commandButton value="Join" action="#{join.create}"/>
+            </div>
         </h:form>
     </div>
 </h:body>
