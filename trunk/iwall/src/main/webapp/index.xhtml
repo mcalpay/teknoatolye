@@ -14,10 +14,12 @@
         This is the : #{wall.name} wall
         <ui:fragment rendered="#{principal.isLoggedIn()}">
             <h:form>
-                <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti"/>
-
-                <div><h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/></div>
-            </h:form></ui:fragment>
+                <h:inputTextarea value="#{newBrick.grafiti}" styleClass="grafiti" required="true"/>
+                <div>
+                    <h:commandButton value="Paint" action="#{principal.addBrick(entityManager,newBrick)}"/>
+                </div>
+            </h:form>
+        </ui:fragment>
         <h:dataTable value="#{wall.bricks}" var="brk" width="100%">
             <h:column>
                 <hr/>
@@ -33,11 +35,13 @@
                 <div><span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{principal.id}/avatar"
                                                                        height="40px"/></span>
                     <span style="vertical-align:top;">#{principal.name}</span></div>
-                <h:commandLink value="Logout" action="#{principal.logout()}"/> <br/>
+                <h:commandLink value="Logout" action="#{principal.logout()}"/>
+                <br/>
             </ui:fragment>
             <ui:fragment rendered="#{!principal.isLoggedIn()}">
                 <div>
-                    <h:commandLink value="Login" action="/login"/> <br/>
+                    <h:commandLink value="Login" action="/login"/>
+                    <br/>
                     <h:commandLink value="Join" action="/join"/>
                 </div>
             </ui:fragment>
