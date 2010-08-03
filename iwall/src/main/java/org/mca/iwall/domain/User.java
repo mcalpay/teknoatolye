@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = User.Queries.GETUSERBYNAME,
                 query = "select u from User u " +
-                        "join fetch u.wall w left join fetch w.bricks " +
+                        "join fetch u.wall left join fetch w.bricks " +
                         "where u.name = ?1"),
         @NamedQuery(name = User.Queries.GETUSERSFOLLOWERSBYNAME,
                 query = "select u.followers from User u " +
@@ -110,14 +110,14 @@ public class User implements Principal, Serializable {
         entityManager.getTransaction().begin();
         brick.setUser(this);
         entityManager.persist(brick);
-        getWall().getBricks().add(brick);
+        getWall().getBricks().add(0,brick);
         entityManager.merge(getWall());
 
         List<User> users = entityManager.createNamedQuery(Queries.GETUSERSFOLLOWERSBYNAME)
                 .setParameter(1, getName()).getResultList();
 
         for (User user : users) {
-            user.getWall().getBricks().add(brick);
+            user.getWall().getBricks().add(0,brick);
             entityManager.merge(user.getWall());
         }
 
