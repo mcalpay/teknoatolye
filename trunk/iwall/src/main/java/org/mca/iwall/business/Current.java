@@ -7,10 +7,12 @@ import org.mca.iwall.domain.Wall;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import java.io.IOException;
 import java.io.Serializable;
 
 @SessionScoped
@@ -19,12 +21,17 @@ public class Current implements Serializable {
 
     @Inject
     @UserQualifier(User.Qualifiers.ANONYMOUS)
+    private User anonymous;
+
     private User user;
 
     @Inject
     private EntityManager entityManager;
 
     public User getUser() {
+        if (user == null) {
+            user = anonymous;
+        }
         return user;
     }
 
@@ -38,6 +45,11 @@ public class Current implements Serializable {
         } catch (NoResultException nre) {
             return "";
         }
+    }
+
+    public String logout() {
+        this.user = anonymous;
+        return "redirect:/index";
     }
 
     @Produces

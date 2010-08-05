@@ -38,7 +38,7 @@
                 <div><span style="vertical-align:top;"><h:graphicImage value="/rest/User/#{principal.id}/avatar"
                                                                        height="40px"/></span>
                     <span style="vertical-align:top;">#{principal.name}</span></div>
-                <h:commandLink value="Logout" action="#{principal.logout()}"/>
+                <h:commandLink value="Logout" action="#{current.logout()}" immediate="true"/>
                 <br/>
             </ui:fragment>
             <ui:fragment rendered="#{!principal.isLoggedIn()}">
