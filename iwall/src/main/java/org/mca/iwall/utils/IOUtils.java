@@ -5,7 +5,11 @@ import java.io.InputStream;
 
 public class IOUtils {
 
-    public static byte [] toByteArray(InputStream is) throws IOException {
-        return org.apache.commons.io.IOUtils.toByteArray(is);
+    public static byte [] toByteArray(InputStream is) {
+        try {
+            return org.apache.commons.io.IOUtils.toByteArray(is);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

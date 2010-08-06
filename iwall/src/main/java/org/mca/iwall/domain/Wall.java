@@ -1,5 +1,7 @@
 package org.mca.iwall.domain;
 
+import org.hibernate.annotations.IndexColumn;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class Wall implements Serializable {
     private String name;
 
     @ManyToMany
+    @IndexColumn(name = "sira")
     private List<Brick> bricks = new ArrayList<Brick>();
 
     public Wall() {
