@@ -3,6 +3,7 @@ package org.mca.iwall.web.listeners;
 import org.mca.iwall.domain.User;
 import org.mca.iwall.domain.UserQualifier;
 import org.mca.iwall.domain.Wall;
+import org.mca.iwall.utils.IOUtils;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -19,7 +20,7 @@ public class SetupContext implements ServletContextListener {
     private EntityManagerFactory entityManagerFactory;
 
     @Inject
-    @UserQualifier(User.Qualifiers.ANONYMOUS)
+    @UserQualifier(User.Qualifiers.ANONYMOUSAPP)
     private User anonymous;
 
     @Override
@@ -38,6 +39,7 @@ public class SetupContext implements ServletContextListener {
             User user = new User("testus");
             user.setWall(new Wall("demo"));
             user.getFollowers().add(anonymous);
+            user.setAvatar(IOUtils.toByteArray(getClass().getResourceAsStream("/brick.jpg")));
             entityManager.persist(user);
             entityManager.getTransaction().commit();
         }

@@ -1,5 +1,7 @@
 package org.mca.iwall.domain;
 
+import org.mca.iwall.utils.IOUtils;
+
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
@@ -27,7 +29,7 @@ public class User implements Principal, Serializable {
     }
 
     public enum Qualifiers {
-        LOGIN, PRINCIPAL, ANONYMOUS
+        LOGIN, PRINCIPAL, ANONYMOUS, ANONYMOUSAPP;
     }
 
     @Id
@@ -135,7 +137,7 @@ public class User implements Principal, Serializable {
     }
 
     @Produces
-    @UserQualifier(Qualifiers.ANONYMOUS)
+    @UserQualifier(Qualifiers.ANONYMOUSAPP)
     private User getAnonymous(EntityManagerFactory entityManagerFactory) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         User anonymous = new User("Anonymous");
@@ -145,6 +147,26 @@ public class User implements Principal, Serializable {
                     .setParameter(1, anonymous.getName()).getSingleResult();
         } catch (NoResultException nre) {
             entityManager.getTransaction().begin();
+            entityManager.persist(anonymous);
+            entityManager.getTransaction().commit();
+        }
+
+        return anonymous;
+    }
+
+    @Produces
+    @RequestScoped
+    @UserQualifier(Qualifiers.ANONYMOUS)
+    private User getAnonymousRequestScoped(EntityManagerFactory entityManagerFactory) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        User anonymous = new User("Anonymous");
+        anonymous.setWall(new Wall("Anonymous"));
+        try {
+            anonymous = (User) entityManager.createNamedQuery(Queries.GETUSERBYNAME)
+                    .setParameter(1, anonymous.getName()).getSingleResult();
+        } catch (NoResultException nre) {
+            entityManager.getTransaction().begin();
+            anonymous.setAvatar(IOUtils.toByteArray(getClass().getResourceAsStream("/brick.jpg")));
             entityManager.persist(anonymous);
             entityManager.getTransaction().commit();
         }

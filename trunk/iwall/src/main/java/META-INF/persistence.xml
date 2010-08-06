@@ -11,6 +11,7 @@
             <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:bigwall"/>
             <property name="hibernate.connection.username" value="sa"/>
             <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

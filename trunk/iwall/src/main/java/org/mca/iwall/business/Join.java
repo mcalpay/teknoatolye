@@ -19,7 +19,7 @@ import java.io.Serializable;
 public class Join implements Serializable {
 
     @Inject
-    @UserQualifier(User.Qualifiers.ANONYMOUS)
+    @UserQualifier(User.Qualifiers.ANONYMOUSAPP)
     private User anonymous;
 
     private String userName;
@@ -38,10 +38,14 @@ public class Join implements Serializable {
         User user = new User(userName);
         user.setWall(wall);
         user.setAvatar(avatar);
-        user.getFollowers().add(anonymous);
+        user.getFollowers().add(this.getAnonymous());
         entityManager.persist(user);
         entityManager.getTransaction().commit();
         return "/index";
+    }
+
+    public User getAnonymous() {
+        return anonymous;
     }
 
     public void uploadAvatar(@Observes Part item) {
